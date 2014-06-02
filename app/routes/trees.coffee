@@ -37,5 +37,5 @@ exports.install = (app) ->
   app.get  "/trees", list
   app.get  "/trees/tree/:id", get
   app.post "/trees/tree/:id", create
-  app.get  "/trres/near", getTreeNear
+  app.get  "/trees/near", getTreeNear
   app.get  "/trees/within", within
