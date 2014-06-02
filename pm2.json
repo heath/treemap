@@ -1,0 +1,11 @@
+[
+  {
+    "name": "fullscreen-map",
+    "script" : "index.js",
+    "instances": 4,
+    "env": {
+      "PORT": 3000
+    }
+  }
+]
+
