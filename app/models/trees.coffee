@@ -14,9 +14,9 @@ Trees.get = (id) ->
   db.find "trees", { _id: treeObjectID }
   .catch (err) -> console.error err
 
-Trees.create = (lat, lon, name) ->
+Trees.create = (lat, lon, common, binomial) ->
   db.insert "trees",
-    Name : name
+    names: { common, binomial }
     pos  : [ lon, lat ]
   .catch (err) -> console.error err
 

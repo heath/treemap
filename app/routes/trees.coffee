@@ -11,8 +11,9 @@ get = (req, res) ->
 create = (req, res) ->
   lon = parseFloat req.body.lon
   lat = parseFloat req.body.lat
-  name = req.body.name
-  Trees.create( lon, lat, name)
+  cName = req.body.common
+  bName = req.body.binomial
+  Trees.create( lon, lat, cName, bName)
   .then (tree) -> res.json tree
 
 update = (req, res) ->

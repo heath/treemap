@@ -4,7 +4,7 @@ server = express()
 
 server.use (require "body-parser")()
 server.use (require "express-promise")()
-server.use (require "cors")
+server.use (require "express-cors")
   credentials: true
   origin: true
 
