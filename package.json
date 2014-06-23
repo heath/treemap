@@ -10,7 +10,7 @@
     "mongo-gyro": "^0.1.22",
     "mongodb": "^1.4.5",
     "nconf": "^0.6.9",
-    "express-promise": "^0.1.9",
+    "express-promise": "^0.1.9"
   },
   "devDependencies": {
     "coffee-script": "^1.7.1",
