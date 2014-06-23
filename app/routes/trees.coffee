@@ -9,8 +9,8 @@ get = (req, res) ->
   .then (tree) -> res.json tree
 
 create = (req, res) ->
-  lon = parseFloat req.body.lon
-  lat = parseFloat req.body.lat
+  lon = parseFloat req.body.longitude
+  lat = parseFloat req.body.latitude
   cName = req.body.common
   bName = req.body.binomial
   Trees.create( lon, lat, cName, bName)
