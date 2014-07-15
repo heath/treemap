@@ -5,26 +5,26 @@ BSON = mongodb.BSONPure
 
 Trees = module.exports = exports
 
-Trees.list = ->
+Trees::list = ->
   db.find("trees")
   .catch (err) -> console.error err
 
-Trees.get = (id) ->
+Trees::find = (id) ->
   treeObjectID = new BSON.ObjectID id
   db.find "trees", { _id: treeObjectID }
   .catch (err) -> console.error err
 
-Trees.create = (lat, lon, common, binomial) ->
+Trees::create = (lat, lon, common, binomial) ->
   db.insert "trees",
     names: { common, binomial }
     pos  : [ lon, lat ]
   .catch (err) -> console.error err
 
-Trees.getTreeNear = (lon, lat) ->
+Trees::getTreeNear = (lon, lat) ->
   db.find "trees", pos: $near: [ lon, lat ]
   .catch (err) -> console.error err
 
-Trees.within = (lat1, lon1, lat2, lon2) ->
+Trees::within = (lat1, lon1, lat2, lon2) ->
   db.find "trees",
     pos:
       $geoWithin:

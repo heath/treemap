@@ -4,8 +4,8 @@ list = (req, res) ->
   Trees.list()
   .then (trees) -> res.json trees
 
-get = (req, res) ->
-  Trees.get req.params.tree_id
+find = (req, res) ->
+  Trees.find req.params.tree_id
   .then (tree) -> res.json tree
 
 create = (req, res) ->
@@ -36,7 +36,7 @@ within = (req, res) ->
 
 exports.install = (app) ->
   app.get  "/trees", list
-  app.get  "/trees/tree/:id", get
+  app.get  "/trees/tree/:id", find
   app.post "/trees/tree/:id", create
   app.get  "/trees/near", getTreeNear
   app.get  "/trees/within", within
